@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -10,9 +11,14 @@ namespace Data.Context
     public class CarDealershipDbContext : DbContext
     {
         public CarDealershipDbContext()
-            : base("BloggingCompactDatabase")
+            : base("CarDealershipDatabase")
         {
         }
+
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        
     }
 
 }
