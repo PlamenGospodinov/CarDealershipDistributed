@@ -23,5 +23,6 @@ namespace Data.Entities
         public int LowestModelPrice { get; set; }
 
         public virtual ICollection<Car> Cars { get; set; }
+
     }
 }
