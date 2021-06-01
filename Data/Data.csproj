@@ -56,9 +56,18 @@
     <Compile Include="Entities\Brand.cs" />
     <Compile Include="Entities\Car.cs" />
     <Compile Include="Entities\Sale.cs" />
+    <Compile Include="Migrations\202106011814291_InitialMigration.cs" />
+    <Compile Include="Migrations\202106011814291_InitialMigration.designer.cs">
+      <DependentUpon>202106011814291_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106011814291_InitialMigration.resx">
+      <DependentUpon>202106011814291_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

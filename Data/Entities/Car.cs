@@ -30,7 +30,6 @@ namespace Data.Entities
         public int Power { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(5, 2)")]
         public decimal Price { get; set; }
 
         [Required]
@@ -43,7 +42,7 @@ namespace Data.Entities
         [MaxLength(50)]
         public string AddedBy { get; set; }
 
-        
+        public virtual ICollection<Sale> Sales { get; set; }
 
 
     }
