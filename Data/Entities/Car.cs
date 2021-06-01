@@ -10,6 +10,10 @@ namespace Data.Entities
 {
     public class Car : BaseEntity
     {
+        public int BrandID { get; set; }
+        [Required]
+        public virtual Brand Brand { get; set; }
+
         [Required]
         [MaxLength(80)]
         public string Model { get; set; }
@@ -28,5 +32,19 @@ namespace Data.Entities
         [Required]
         [Column(TypeName = "decimal(5, 2)")]
         public decimal Price { get; set; }
+
+        [Required]
+        public DateTime ManifactureDate { get; set; }
+
+        [MaxLength(70)]
+        public string Details { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string AddedBy { get; set; }
+
+        
+
+
     }
 }
