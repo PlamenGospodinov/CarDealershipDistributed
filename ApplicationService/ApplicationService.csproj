@@ -55,6 +55,7 @@
     <Compile Include="DTOs\CarDTO.cs" />
     <Compile Include="DTOs\SaleDTO.cs" />
     <Compile Include="Implementations\BrandManagementService.cs" />
+    <Compile Include="Implementations\CarManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

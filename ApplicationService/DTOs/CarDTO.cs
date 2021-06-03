@@ -33,5 +33,7 @@ namespace ApplicationService.DTOs
         public string AddedBy { get; set; }
 
         public BrandDTO Brand { get; set; }
+
+        public int BrandId { get; set; }
     }
 }
