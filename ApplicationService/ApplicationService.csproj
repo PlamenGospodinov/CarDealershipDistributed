@@ -62,6 +62,10 @@
       <Project>{ABBF8341-46E0-40D2-98F6-71A2E6C695AD}</Project>
       <Name>Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{71799334-1F06-4484-B15F-720B82E843E2}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
