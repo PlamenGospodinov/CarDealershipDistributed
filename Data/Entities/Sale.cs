@@ -15,11 +15,14 @@ namespace Data.Entities
         public virtual Car Car { get; set; }
 
         [Required]
+        [MaxLength(20)]
         public string ClientFirstName { get; set; }
 
         [Required]
+        [MaxLength(20)]
         public string ClientLastName { get; set; }
 
+        [MaxLength(50)]
         public string SellerName { get; set; }
 
         public DateTime? SaleDate { get; set; }
