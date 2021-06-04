@@ -63,8 +63,11 @@ namespace ApplicationService.Implementations
 
         public bool Save(BrandDTO brandDto)
         {
+
+
             Brand brand = new Brand
             {
+                Id = brandDto.Id,
                 BrandName = brandDto.BrandName,
                 CountryOfOrigin = brandDto.CountryOfOrigin,
                 FoundedIn = brandDto.FoundedIn,

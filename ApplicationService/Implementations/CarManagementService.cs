@@ -87,29 +87,50 @@ namespace ApplicationService.Implementations
             return carDto;
         }
 
-        public bool Save(BrandDTO brandDto)
+        public bool Save(CarDTO carDto)
         {
+            if (carDto.Brand == null || carDto.Brand.Id == 0)
+            {
+                return false;
+            }
+
             Brand brand = new Brand
             {
-                BrandName = brandDto.BrandName,
-                CountryOfOrigin = brandDto.CountryOfOrigin,
-                FoundedIn = brandDto.FoundedIn,
-                AddedOn = brandDto.AddedOn,
-                AddedFrom = brandDto.AddedFrom,
-                LowestModelPrice = brandDto.LowestModelPrice
+                Id =carDto.Brand.Id,
+                BrandName = carDto.Brand.BrandName,
+                CountryOfOrigin = carDto.Brand.CountryOfOrigin,
+                FoundedIn = carDto.Brand.FoundedIn,
+                AddedOn = carDto.Brand.AddedOn,
+                AddedFrom = carDto.Brand.AddedFrom,
+                LowestModelPrice = carDto.Brand.LowestModelPrice
             };
+
+            Car car = new Car
+            {
+                Id = carDto.Id,
+                Model = carDto.Model,
+                Condition = carDto.Condition,
+                Color = carDto.Color,
+                Power = carDto.Power,
+                Price = carDto.Price,
+                ManifactureDate = carDto.ManifactureDate,
+                Details = carDto.Details,
+                AddedBy = carDto.AddedBy,
+                BrandID = carDto.Brand.Id
+            };
+        
 
             try
             {
                 using (UnitOfWork unitOfWork = new UnitOfWork())
                 {
-                    if (brandDto.Id == 0)
+                    if (carDto.Id == 0)
                     {
-                        unitOfWork.BrandRepository.Insert(brand);
+                        unitOfWork.CarRepository.Insert(car);
                     }
                     else
                     {
-                        unitOfWork.BrandRepository.Update(brand);
+                        unitOfWork.CarRepository.Update(car);
                     }
                     unitOfWork.Save();
                 }
@@ -129,8 +150,8 @@ namespace ApplicationService.Implementations
             {
                 using (UnitOfWork unitOfWork = new UnitOfWork())
                 {
-                    Brand brand = unitOfWork.BrandRepository.GetByID(id);
-                    unitOfWork.BrandRepository.Delete(brand);
+                    Car car = unitOfWork.CarRepository.GetByID(id);
+                    unitOfWork.CarRepository.Delete(car);
                     unitOfWork.Save();
                 }
 
