@@ -8,6 +8,7 @@ namespace ApplicationService.DTOs
 {
     public class SaleDTO
     {
+        public int Id { get; set; }
         public string ClientFirstName { get; set; }
 
         public string ClientLastName { get; set; }
@@ -19,5 +20,7 @@ namespace ApplicationService.DTOs
         public decimal SalePrice { get; set; }
 
         public CarDTO Car { get; set; }
+
+        public int CarId { get; set; }
     }
 }
