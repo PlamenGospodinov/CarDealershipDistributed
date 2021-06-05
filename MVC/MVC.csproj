@@ -120,12 +120,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BrandVM.cs" />
+    <Compile Include="ViewModels\CarVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -167,6 +171,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Brand\" />
+    <Folder Include="Views\Car\" />
+    <Folder Include="Views\Sale\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -183,7 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApplicationService\ApplicationService.csproj">
-      <Project>{43B5A494-2DB7-44AE-8990-BC0274DBCC1E}</Project>
+      <Project>{43b5a494-2db7-44ae-8990-bc0274dbcc1e}</Project>
       <Name>ApplicationService</Name>
     </ProjectReference>
   </ItemGroup>
