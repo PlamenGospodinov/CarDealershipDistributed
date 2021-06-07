@@ -10,10 +10,10 @@ namespace Data.Context
 {
     public class CarDealershipDbContext : DbContext
     {
-        public CarDealershipDbContext()
+        /*public CarDealershipDbContext()
             : base("CarDealershipDatabase")
         {
-        }
+        }*/
 
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Car> Cars { get; set; }

@@ -18,7 +18,7 @@ namespace ApplicationService.Implementations
         {
             List<BrandDTO> brandsDto = new List<BrandDTO>();
 
-            using(UnitOfWork unitOfWork = new UnitOfWork())
+            using (UnitOfWork unitOfWork = new UnitOfWork())
             {
                 foreach (var item in unitOfWork.BrandRepository.Get())
                 {
@@ -34,7 +34,7 @@ namespace ApplicationService.Implementations
                     });
                 }
             }
-            
+
 
             return brandsDto;
         }
@@ -42,7 +42,7 @@ namespace ApplicationService.Implementations
         public BrandDTO GetById(int id)
         {
             BrandDTO brandDto = new BrandDTO();
-            using(UnitOfWork unitOfWork = new UnitOfWork())
+            using (UnitOfWork unitOfWork = new UnitOfWork())
             {
                 Brand brand = unitOfWork.BrandRepository.GetByID(id);
                 brandDto = new BrandDTO
@@ -56,18 +56,15 @@ namespace ApplicationService.Implementations
                     LowestModelPrice = brand.LowestModelPrice
                 };
             }
-            
+
 
             return brandDto;
         }
 
         public bool Save(BrandDTO brandDto)
         {
-
-
             Brand brand = new Brand
             {
-                Id = brandDto.Id,
                 BrandName = brandDto.BrandName,
                 CountryOfOrigin = brandDto.CountryOfOrigin,
                 FoundedIn = brandDto.FoundedIn,
@@ -78,9 +75,9 @@ namespace ApplicationService.Implementations
 
             try
             {
-                using(UnitOfWork unitOfWork = new UnitOfWork())
+                using (UnitOfWork unitOfWork = new UnitOfWork())
                 {
-                    if(brandDto.Id == 0)
+                    if (brandDto.Id == 0)
                     {
                         unitOfWork.BrandRepository.Insert(brand);
                     }
@@ -90,12 +87,12 @@ namespace ApplicationService.Implementations
                     }
                     unitOfWork.Save();
                 }
-                
+
                 return true;
             }
             catch
             {
-               
+
                 return false;
             }
         }
@@ -104,13 +101,13 @@ namespace ApplicationService.Implementations
         {
             try
             {
-                using(UnitOfWork unitOfWork = new UnitOfWork())
+                using (UnitOfWork unitOfWork = new UnitOfWork())
                 {
                     Brand brand = unitOfWork.BrandRepository.GetByID(id);
                     unitOfWork.BrandRepository.Delete(brand);
                     unitOfWork.Save();
                 }
-                
+
                 return true;
             }
             catch

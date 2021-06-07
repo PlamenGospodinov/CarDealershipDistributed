@@ -20,7 +20,6 @@ namespace ApplicationService.DTOs
         public decimal SalePrice { get; set; }
 
         public CarDTO Car { get; set; }
-
         public int CarId { get; set; }
     }
 }

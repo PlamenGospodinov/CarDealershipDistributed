@@ -6,16 +6,27 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6865460F-17A3-486A-82D6-28E2B396B055}</ProjectGuid>
+    <ProjectGuid>{940E3B72-954B-4685-AC20-8C969AC042DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WCFServ</RootNamespace>
-    <AssemblyName>WCFServ</AssemblyName>
+    <RootNamespace>WCFProba</RootNamespace>
+    <AssemblyName>WCFProba</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+    <XsdCodeGenSerializerMode>XmlSerializer</XsdCodeGenSerializerMode>
+    <XsdCodeGenReuseTypesFlag>True</XsdCodeGenReuseTypesFlag>
+    <XsdCodeGenReuseTypesMode>All</XsdCodeGenReuseTypesMode>
+    <XsdCodeGenReferences />
+    <XsdCodeGenNamespaceMappings>%2a, WCFProba.ContractTypes</XsdCodeGenNamespaceMappings>
+    <XsdCodeGenCollectionTypes>System.Array%3bSystem.Collections.Generic.Dictionary`2</XsdCodeGenCollectionTypes>
+    <XsdCodeGenExcludedTypes />
+    <XsdCodeGenImportXmlTypes>True</XsdCodeGenImportXmlTypes>
+    <XsdCodeGenGenerateSerializableTypes>True</XsdCodeGenGenerateSerializableTypes>
+    <XsdCodeGenGenerateInternalTypes>False</XsdCodeGenGenerateInternalTypes>
+    <XsdCodeGenEnableDataBinding>False</XsdCodeGenEnableDataBinding>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -27,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -64,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApplicationService\ApplicationService.csproj">
-      <Project>{43B5A494-2DB7-44AE-8990-BC0274DBCC1E}</Project>
+      <Project>{80cdcb18-bbe2-40eb-8db0-614d8aa3c72b}</Project>
       <Name>ApplicationService</Name>
     </ProjectReference>
   </ItemGroup>

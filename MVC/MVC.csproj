@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,6 +122,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -132,6 +139,15 @@
     <Compile Include="ViewModels\CarVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <Content Include="Connected Services\ServiceReference1\MVC.ServiceReference1.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -142,6 +158,22 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Connected Services\ServiceReference1\ApplicationService.DTOs.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\service.wsdl" />
+    <None Include="Connected Services\ServiceReference1\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\WCFProba.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\ApplicationService.DTOs.BrandDTO.datasource" />
+    <Content Include="Properties\DataSources\ApplicationService.DTOs.CarDTO.datasource" />
+    <Content Include="Properties\DataSources\ApplicationService.DTOs.SaleDTO.datasource" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -189,10 +221,16 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ApplicationService\ApplicationService.csproj">
-      <Project>{43b5a494-2db7-44ae-8990-bc0274dbcc1e}</Project>
+      <Project>{80CDCB18-BBE2-40EB-8DB0-614D8AA3C72B}</Project>
       <Name>ApplicationService</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

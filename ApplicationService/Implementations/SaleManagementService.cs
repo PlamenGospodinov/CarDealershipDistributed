@@ -1,12 +1,8 @@
 ﻿using ApplicationService.DTOs;
-using Data.Context;
 using Data.Entities;
 using Repository.Implementations;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Data.Context;
 
 namespace ApplicationService.Implementations
 {

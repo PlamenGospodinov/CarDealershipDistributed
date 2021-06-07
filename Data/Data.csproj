@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202106051020470_ThirdMigration.designer.cs">
       <DependentUpon>202106051020470_ThirdMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106071356590_finalMig.cs" />
+    <Compile Include="Migrations\202106071356590_finalMig.designer.cs">
+      <DependentUpon>202106071356590_finalMig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106051020470_ThirdMigration.resx">
       <DependentUpon>202106051020470_ThirdMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106071356590_finalMig.resx">
+      <DependentUpon>202106071356590_finalMig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

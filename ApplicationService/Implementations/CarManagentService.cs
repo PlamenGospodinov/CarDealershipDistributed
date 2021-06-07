@@ -96,7 +96,7 @@ namespace ApplicationService.Implementations
 
             Brand brand = new Brand
             {
-                Id =carDto.Brand.Id,
+                Id = carDto.Brand.Id,
                 BrandName = carDto.Brand.BrandName,
                 CountryOfOrigin = carDto.Brand.CountryOfOrigin,
                 FoundedIn = carDto.Brand.FoundedIn,
@@ -118,7 +118,7 @@ namespace ApplicationService.Implementations
                 AddedBy = carDto.AddedBy,
                 BrandID = carDto.Brand.Id
             };
-        
+
 
             try
             {

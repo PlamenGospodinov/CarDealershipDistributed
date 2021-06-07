@@ -11,25 +11,25 @@ namespace ApplicationService.DTOs
         public int Id { get; set; }
         public string Model { get; set; }
 
-        
+
         public string Condition { get; set; }
 
-        
+
         public string Color { get; set; }
 
-        
+
         public int Power { get; set; }
 
-        
+
         public decimal Price { get; set; }
 
-        
+
         public DateTime ManifactureDate { get; set; }
 
-        
+
         public string Details { get; set; }
 
-        
+
         public string AddedBy { get; set; }
 
         public BrandDTO Brand { get; set; }

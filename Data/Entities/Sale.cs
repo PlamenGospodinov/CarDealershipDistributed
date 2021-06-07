@@ -15,16 +15,18 @@ namespace Data.Entities
         public virtual Car Car { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [StringLength(30, ErrorMessage = "The first name can't be that long.")]
         public string ClientFirstName { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [StringLength(30, ErrorMessage = "The last name can't be that long.")]
         public string ClientLastName { get; set; }
 
-        [MaxLength(50)]
+        [StringLength(50, ErrorMessage = "The seller name can't be that long.")]
         public string SellerName { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? SaleDate { get; set; }
 
         [Required]
