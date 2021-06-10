@@ -81,21 +81,35 @@ namespace MVC.Controllers
 
         // GET: Brands/Edit/
 
-        int currentId;
+        
         BrandDTO brandDto;
+        int currentId;
+        BrandDTO helperDto;
+        BrandDTO helperDto2;
+        [HttpGet]
         public ActionResult Edit(int id)
         {
+            
+            currentId = id;
             BrandVM brandVM = new BrandVM();
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
                 brandDto = service.GetBrandByID(id);
+                helperDto = service.GetBrandByID(id);
                 brandVM = new BrandVM(brandDto);
-                currentId = id;
-                 
+                if (id != 0)
+                {
+                    currentId = id;
+                }
+                else
+                {
+                    currentId +=0;
+                }
+                
             }
-
+            helperDto2 = helperDto;
             ViewBag.Brands = LoadDataUtil.LoadBrandData();
-
+            
             return View(brandVM);
         }
 
@@ -110,7 +124,7 @@ namespace MVC.Controllers
                 {
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
-
+                        
                         
                         BrandDTO brandDto2 = new BrandDTO
                         {
@@ -122,8 +136,10 @@ namespace MVC.Controllers
                             AddedFrom = brandVM.AddedFrom,
                             LowestModelPrice = brandVM.LowestModelPrice,
                         };
-
+                        service.DeleteBrand(currentId);
                         service.PostBrand(brandDto2);
+                        
+                        
                     }
 
 
