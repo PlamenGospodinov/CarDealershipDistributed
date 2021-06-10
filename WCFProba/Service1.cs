@@ -15,6 +15,8 @@ namespace WCFProba
         private BrandManagementService brandService = new BrandManagementService();
         private CarManagementService carService = new CarManagementService();
         private SaleManagementService saleService = new SaleManagementService();
+
+        public BrandDTO brandDto { get; set; }
         public string DeleteBrand(int id)
         {
             if (!brandService.Delete(id))

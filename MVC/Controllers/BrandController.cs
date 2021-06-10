@@ -1,4 +1,5 @@
 ﻿using ApplicationService.DTOs;
+using Data.Context;
 using MVC.Utils;
 using MVC.ViewModels;
 using System;
@@ -19,6 +20,7 @@ namespace MVC.Controllers
             {
                 foreach (var item in service.GetBrands())
                 {
+                    
                     brandsVM.Add(new BrandVM(item));
                 }
             }
@@ -79,35 +81,35 @@ namespace MVC.Controllers
         }
 
 
-        // GET: Brands/Edit/
-
+        // GET: Brands/Edit
         
-        BrandDTO brandDto;
-        int currentId;
-        BrandDTO helperDto;
-        BrandDTO helperDto2;
+        
         [HttpGet]
         public ActionResult Edit(int id)
         {
+           
             
-            currentId = id;
             BrandVM brandVM = new BrandVM();
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
-                brandDto = service.GetBrandByID(id);
-                helperDto = service.GetBrandByID(id);
-                brandVM = new BrandVM(brandDto);
-                if (id != 0)
-                {
-                    currentId = id;
-                }
-                else
-                {
-                    currentId +=0;
-                }
                 
+                var brandDto = service.GetBrandByID(id);
+                //service.DeleteBrand(id);
+                brandVM = new BrandVM
+                {
+                    Id = brandDto.Id,
+                    BrandName = brandDto.BrandName,
+                    CountryOfOrigin = brandDto.CountryOfOrigin,
+                    FoundedIn = brandDto.FoundedIn,
+                    AddedOn = brandDto.AddedOn,
+                    AddedFrom = brandDto.AddedFrom,
+                    LowestModelPrice = brandDto.LowestModelPrice,
+                };
+
             }
-            helperDto2 = helperDto;
+
+            
+            
             ViewBag.Brands = LoadDataUtil.LoadBrandData();
             
             return View(brandVM);
@@ -122,6 +124,7 @@ namespace MVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
                         
@@ -136,12 +139,12 @@ namespace MVC.Controllers
                             AddedFrom = brandVM.AddedFrom,
                             LowestModelPrice = brandVM.LowestModelPrice,
                         };
-                        service.DeleteBrand(currentId);
+                        
                         service.PostBrand(brandDto2);
                         
                         
                     }
-
+                    
 
 
                     return RedirectToAction("Index");

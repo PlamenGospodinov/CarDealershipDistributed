@@ -92,7 +92,7 @@ namespace ApplicationService.Implementations
             }
             catch
             {
-
+                
                 return false;
             }
         }

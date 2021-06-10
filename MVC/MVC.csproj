@@ -240,6 +240,10 @@
       <Project>{80CDCB18-BBE2-40EB-8DB0-614D8AA3C72B}</Project>
       <Name>ApplicationService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{ABBF8341-46E0-40D2-98F6-71A2E6C695AD}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
