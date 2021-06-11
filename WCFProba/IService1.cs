@@ -13,6 +13,10 @@ namespace WCFProba
     public interface IService1
     {
         [OperationContract]
+        void SetCurrentId(int value);
+        [OperationContract]
+        int GetCurrentId();
+        [OperationContract]
         string GetData(int value);
 
         [OperationContract]

@@ -8,6 +8,18 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_SetCurrentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCurrentId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SetCurrentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCurrentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCurrentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCurrentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
@@ -111,6 +123,14 @@
     <wsdl:part name="parameters" element="tns:DeleteSaleResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="SetCurrentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SetCurrentId" message="tns:IService1_SetCurrentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SetCurrentIdResponse" message="tns:IService1_SetCurrentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCurrentId" message="tns:IService1_GetCurrentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCurrentIdResponse" message="tns:IService1_GetCurrentId_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
@@ -182,6 +202,24 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetCurrentId">
+      <soap:operation soapAction="http://tempuri.org/IService1/SetCurrentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCurrentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetData">
       <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
       <wsdl:input>

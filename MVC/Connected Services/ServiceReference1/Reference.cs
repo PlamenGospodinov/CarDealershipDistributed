@@ -17,6 +17,7 @@ namespace MVC.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WCFProba")]
     [System.SerializableAttribute()]
+
     public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -77,6 +78,18 @@ namespace MVC.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetCurrentId", ReplyAction="http://tempuri.org/IService1/SetCurrentIdResponse")]
+        void SetCurrentId(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetCurrentId", ReplyAction="http://tempuri.org/IService1/SetCurrentIdResponse")]
+        System.Threading.Tasks.Task SetCurrentIdAsync(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCurrentId", ReplyAction="http://tempuri.org/IService1/GetCurrentIdResponse")]
+        int GetCurrentId();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCurrentId", ReplyAction="http://tempuri.org/IService1/GetCurrentIdResponse")]
+        System.Threading.Tasks.Task<int> GetCurrentIdAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         string GetData(int value);
@@ -206,6 +219,22 @@ namespace MVC.ServiceReference1 {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void SetCurrentId(int value) {
+            base.Channel.SetCurrentId(value);
+        }
+        
+        public System.Threading.Tasks.Task SetCurrentIdAsync(int value) {
+            return base.Channel.SetCurrentIdAsync(value);
+        }
+        
+        public int GetCurrentId() {
+            return base.Channel.GetCurrentId();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetCurrentIdAsync() {
+            return base.Channel.GetCurrentIdAsync();
         }
         
         public string GetData(int value) {

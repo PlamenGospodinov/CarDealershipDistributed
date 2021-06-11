@@ -3,7 +3,9 @@
 @{
     ViewBag.Title = "Details";
 }
-
+<head>
+    <link href="~/css/CreateEditDeleteCar.css" rel="stylesheet" />
+</head>
 <h2>Details</h2>
 
 <div>
@@ -60,7 +62,7 @@
 
     </dl>
 </div>
-<p>
+<p class= "back">
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

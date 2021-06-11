@@ -16,7 +16,7 @@ namespace WCFProba
         private CarManagementService carService = new CarManagementService();
         private SaleManagementService saleService = new SaleManagementService();
 
-        public BrandDTO brandDto { get; set; }
+        public int CurrentId = 0;
         public string DeleteBrand(int id)
         {
             if (!brandService.Delete(id))
@@ -71,6 +71,11 @@ namespace WCFProba
         public List<CarDTO> GetCars()
         {
             return carService.Get();
+        }
+
+        public int GetCurrentId()
+        {
+            return CurrentId;
         }
 
         public string GetData(int value)
@@ -139,6 +144,11 @@ namespace WCFProba
         public string PutSale(SaleDTO saleDto)
         {
             throw new NotImplementedException();
+        }
+
+        public void SetCurrentId(int value)
+        {
+            CurrentId = value;
         }
     }
 }

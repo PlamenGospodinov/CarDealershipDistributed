@@ -57,6 +57,7 @@ namespace MVC.Controllers
                 {
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
+                        
                         BrandDTO brandDTO = new BrandDTO
                         {
                             BrandName = brandVM.BrandName,
@@ -92,7 +93,7 @@ namespace MVC.Controllers
             BrandVM brandVM = new BrandVM();
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
-                
+                service.SetCurrentId(id);
                 var brandDto = service.GetBrandByID(id);
                 //service.DeleteBrand(id);
                 brandVM = new BrandVM
@@ -127,8 +128,8 @@ namespace MVC.Controllers
                     
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
-                        
-                        
+                        int currentVmId = brandVM.Id;
+                        int idForDto = service.GetCurrentId();
                         BrandDTO brandDto2 = new BrandDTO
                         {
                             Id = brandVM.Id,
