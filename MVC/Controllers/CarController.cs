@@ -89,9 +89,9 @@ namespace MVC.Controllers
 
 
 
-            ViewBag.Brands = LoadDataUtil.LoadBrandData();
+            //ViewBag.Cars = LoadDataUtil.LoadCarData();
 
-            return View(brandVM);
+            return View(carVM);
         }
 
         // POST: Cars/Edit/
