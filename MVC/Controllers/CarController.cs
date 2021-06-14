@@ -1,4 +1,5 @@
-﻿using MVC.Utils;
+﻿using ApplicationService.DTOs;
+using MVC.Utils;
 using MVC.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -40,13 +41,17 @@ namespace MVC.Controllers
         // GET: Cars/Create
         public ActionResult Create()
         {
-            return View();
+            using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
+            {
+                ViewBag.Brands = new SelectList(service.GetBrands(),"Id","BrandName");
+            }
+                return View();
         }
 
         // POST: Cars/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(BrandVM brandVM)
+        public ActionResult Create(CarVM carVM)
         {
             try
             {
@@ -54,9 +59,23 @@ namespace MVC.Controllers
                 {
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
-
+                        CarDTO carDto = new CarDTO
+                        {
+                            Model = carVM.Model,
+                            Condition = carVM.Condition,
+                            Color = carVM.Color,
+                            Power = carVM.Power,
+                            Price = carVM.Price,
+                            ManifactureDate = carVM.ManifactureDate,
+                            Details = carVM.Details,
+                            AddedBy = carVM.AddedBy,
+                            Brand = new BrandDTO
+                            {
+                                Id = carVM.BrandId
+                            }
+                        };
                         
-                        //service.PostCar(carDTO);
+                        service.PostCar(carDto);
                     }
 
                     return RedirectToAction("Index");
@@ -66,6 +85,7 @@ namespace MVC.Controllers
             }
             catch
             {
+                ViewBag.Brands = LoadDataUtil.LoadBrandData();
                 return View();
             }
         }
@@ -82,22 +102,18 @@ namespace MVC.Controllers
             CarVM carVM = new CarVM();
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
+                var carDto = service.GetCarByID(id);
+                carVM = new CarVM(carDto);
                 
-                
-
             }
-
-
-
-            //ViewBag.Cars = LoadDataUtil.LoadCarData();
-
+            ViewBag.Brands = LoadDataUtil.LoadBrandData();
             return View(carVM);
         }
 
         // POST: Cars/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(BrandVM brandVM)
+        public ActionResult Edit(CarVM carVM)
         {
             try
             {
@@ -106,7 +122,21 @@ namespace MVC.Controllers
 
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
-                        
+                        CarDTO carDto = new CarDTO
+                        {
+                            Model = carVM.Model,
+                            Condition = carVM.Condition,
+                            Color = carVM.Color,
+                            Power = carVM.Power,
+                            Price = carVM.Price,
+                            ManifactureDate = carVM.ManifactureDate,
+                            Details = carVM.Details,
+                            AddedBy = carVM.AddedBy,
+                            Brand = new BrandDTO
+                            {
+                                Id = carVM.BrandId
+                            }
+                        };
                        // service.PostCar(carDto);
 
 
@@ -117,12 +147,12 @@ namespace MVC.Controllers
                     return RedirectToAction("Index");
                 }
 
-                //ViewBag.Cars = LoadDataUtil.LoadCarData();
+                ViewBag.Cars = LoadDataUtil.LoadBrandData();
                 return View();
             }
             catch
             {
-                //ViewBag.Cars = LoadDataUtil.LoadCarData();
+                ViewBag.Cars = LoadDataUtil.LoadBrandData();
                 return View();
             }
         }
