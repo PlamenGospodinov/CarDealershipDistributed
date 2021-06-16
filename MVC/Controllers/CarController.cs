@@ -61,6 +61,8 @@ namespace MVC.Controllers
                     {
                         CarDTO carDto = new CarDTO
                         {
+                            
+                            BrandId = carVM.BrandId,
                             Model = carVM.Model,
                             Condition = carVM.Condition,
                             Color = carVM.Color,

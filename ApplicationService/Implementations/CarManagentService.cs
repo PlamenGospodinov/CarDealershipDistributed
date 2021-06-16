@@ -116,7 +116,8 @@ namespace ApplicationService.Implementations
                 ManifactureDate = carDto.ManifactureDate,
                 Details = carDto.Details,
                 AddedBy = carDto.AddedBy,
-                BrandID = carDto.Brand.Id
+                BrandID = brand.Id,
+               
             };
 
 

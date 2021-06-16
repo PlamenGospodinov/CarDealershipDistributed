@@ -12,6 +12,7 @@ namespace MVC.ViewModels
     [Bind(Exclude = "Id")]
     public class CarVM
     {
+        [ScaffoldColumn(false)]
         public int Id { get; set; }
         [Required]
         [StringLength(50, ErrorMessage = "Model name can't be that long.")]
@@ -72,6 +73,7 @@ namespace MVC.ViewModels
             ManifactureDate = carDto.ManifactureDate;
             Details = carDto.Details;
             AddedBy = carDto.AddedBy;
+            BrandId = carDto.BrandId;
             BrandVM = new BrandVM
             {
                 Id = carDto.BrandId,
