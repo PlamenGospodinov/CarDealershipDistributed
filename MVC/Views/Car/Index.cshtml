@@ -68,7 +68,7 @@
             @Html.DisplayFor(modelItem => item.AddedBy)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BrandId)
+            @Html.DisplayFor(modelItem => item.BrandVM.BrandName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

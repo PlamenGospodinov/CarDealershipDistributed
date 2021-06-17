@@ -43,7 +43,7 @@ namespace MVC.Controllers
         {
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
-                ViewBag.Brands = new SelectList(service.GetBrands(),"Id","BrandName");
+                ViewBag.Brands = new SelectList(service.GetBrands(), "Id", "BrandName");
             }
                 return View();
         }
@@ -126,6 +126,8 @@ namespace MVC.Controllers
                     {
                         CarDTO carDto = new CarDTO
                         {
+                            
+                            BrandId = carVM.BrandId,
                             Model = carVM.Model,
                             Condition = carVM.Condition,
                             Color = carVM.Color,

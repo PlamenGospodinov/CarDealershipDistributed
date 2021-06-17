@@ -15,5 +15,13 @@ namespace MVC.Utils
                 return new SelectList(service.GetBrands(), "Id", "BrandName","FoundedIn");
             }
         }
+
+        public static SelectList LoadCarData()
+        {
+            using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
+            {
+                return new SelectList(service.GetCars(), "Id", "BrandName", "CarModel");
+            }
+        }
     }
 }

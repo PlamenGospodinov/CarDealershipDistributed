@@ -11,7 +11,7 @@ namespace Data.Entities
     public class Car : BaseEntity
     {
         public int BrandID { get; set; }
-        [Required]
+        //[Required]
         public virtual Brand Brand { get; set; }
 
         [Required]

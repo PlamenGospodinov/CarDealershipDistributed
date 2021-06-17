@@ -1,4 +1,6 @@
-﻿using MVC.ViewModels;
+﻿using ApplicationService.DTOs;
+using MVC.Utils;
+using MVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,10 +41,14 @@ namespace MVC.Controllers
         // GET: Sales/Create
         public ActionResult Create()
         {
+            using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
+            {
+                ViewBag.Cars = new SelectList(service.GetCars(), "Id", "BrandName", "CarModel");
+            }
             return View();
         }
 
-        // POST: Cars/Create
+        // POST: Sales/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(SaleVM saleVM)
@@ -53,9 +59,23 @@ namespace MVC.Controllers
                 {
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
+                        SaleDTO saleDto = new SaleDTO
+                        {
+                            ClientFirstName = saleVM.ClientFirstName,
+                            ClientLastName = saleVM.ClientLastName,
+                            SellerName = saleVM.SellerName,
+                            SaleDate = saleVM.SaleDate,
+                            SalePrice = saleVM.SalePrice,
+                            CarId = saleVM.CarId,
+                            
+                            Car = new CarDTO
+                            {
+                                Id = saleVM.CarId
+                                
+                            }
+                        };
 
-
-                        //service.PostCar(carDTO);
+                        service.PostSale(saleDto);
                     }
 
                     return RedirectToAction("Index");
@@ -65,6 +85,7 @@ namespace MVC.Controllers
             }
             catch
             {
+                ViewBag.Cars = LoadDataUtil.LoadCarData();
                 return View();
             }
         }
@@ -81,16 +102,14 @@ namespace MVC.Controllers
             SaleVM saleVM = new SaleVM();
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
-
-
+                var saleDto = service.GetSaleByID(id);
+                saleVM = new SaleVM(saleDto);
 
             }
-
-
-
-            //ViewBag.Cars = LoadDataUtil.LoadCarData();
-
+            ViewBag.Cars = LoadDataUtil.LoadCarData();
             return View(saleVM);
+
+            
         }
 
         // POST: Sales/Edit/
@@ -105,7 +124,22 @@ namespace MVC.Controllers
 
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
+                        SaleDTO saleDto = new SaleDTO
+                        {
+                            ClientFirstName = saleVM.ClientFirstName,
+                            ClientLastName = saleVM.ClientLastName,
+                            SellerName = saleVM.SellerName,
+                            SaleDate = saleVM.SaleDate,
+                            SalePrice = saleVM.SalePrice,
+                            
+                            CarId = saleVM.CarId,
+                            Car = new CarDTO
+                            {
+                                Id = saleVM.CarId
+                            },
+                            
 
+                        };
                         // service.PostCar(carDto);
 
 

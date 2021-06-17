@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Data.Entities
     {
         [Required]
         [StringLength(30, ErrorMessage = "The brand name can't be that long.")]
+        [Index(IsUnique = true)]
         public string BrandName { get; set; }
         [Required]
         [StringLength(30, ErrorMessage = "The country name can't be that long.")]

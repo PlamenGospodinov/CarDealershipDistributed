@@ -4,6 +4,7 @@ using Data.Entities;
 using Repository.Implementations;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -138,9 +139,8 @@ namespace ApplicationService.Implementations
 
                 return true;
             }
-            catch
+            catch 
             {
-
                 return false;
             }
         }

@@ -11,7 +11,7 @@ namespace Data.Entities
     public class Sale : BaseEntity
     {
         public int CarID { get; set; }
-        [Required]
+        //[Required]
         public virtual Car Car { get; set; }
 
         [Required]

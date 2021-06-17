@@ -41,11 +41,12 @@ namespace MVC.ViewModels
             [DisplayName("Sale Price")]
             public decimal SalePrice { get; set; }
 
-            
-            [DisplayName("Car Name")]
-            public int CarId { get; set; }
+             [DisplayName("Car Id")]
+             public int CarId { get; set; }
 
-            public CarVM CarVM { get; set; }
+            // public string Car = 
+
+        public CarVM CarVM { get; set; }
 
             public SaleVM() { }
 
