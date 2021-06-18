@@ -65,6 +65,7 @@ namespace ApplicationService.Implementations
         {
             Brand brand = new Brand
             {
+                Id = brandDto.Id,
                 BrandName = brandDto.BrandName,
                 CountryOfOrigin = brandDto.CountryOfOrigin,
                 FoundedIn = brandDto.FoundedIn,
@@ -80,12 +81,14 @@ namespace ApplicationService.Implementations
                     if (brandDto.Id == 0)
                     {
                         unitOfWork.BrandRepository.Insert(brand);
+                        unitOfWork.Save();
                     }
                     else
                     {
                         unitOfWork.BrandRepository.Update(brand);
+                        unitOfWork.Save();
                     }
-                    unitOfWork.Save();
+                    
                 }
 
                 return true;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,6 @@ namespace ApplicationService.DTOs
         public DateTime? AddedOn { get; set; }
         public string AddedFrom { get; set; }
         public int LowestModelPrice { get; set; }
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

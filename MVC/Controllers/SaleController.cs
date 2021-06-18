@@ -43,7 +43,7 @@ namespace MVC.Controllers
         {
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
-                ViewBag.Cars = new SelectList(service.GetCars(), "Id", "BrandName", "CarModel");
+                ViewBag.Cars = new SelectList(service.GetCars(), "Id", "Model");
             }
             return View();
         }
@@ -74,7 +74,8 @@ namespace MVC.Controllers
                                 
                             }
                         };
-
+                        saleVM.CarModel = saleDto.Car.Color + " " + saleDto.Car.Model;
+                        
                         service.PostSale(saleDto);
                     }
 
@@ -139,7 +140,8 @@ namespace MVC.Controllers
                             },
                             
 
-                        };
+
+                    };
                         // service.PostCar(carDto);
 
 
@@ -150,12 +152,12 @@ namespace MVC.Controllers
                     return RedirectToAction("Index");
                 }
 
-                //ViewBag.Cars = LoadDataUtil.LoadCarData();
+                ViewBag.Sales = LoadDataUtil.LoadSaleData();
                 return View();
             }
             catch
             {
-                //ViewBag.Cars = LoadDataUtil.LoadCarData();
+                ViewBag.Sales = LoadDataUtil.LoadSaleData();
                 return View();
             }
         }

@@ -37,5 +37,7 @@ namespace ApplicationService.DTOs
 
         
         public int BrandId { get; set; }
+
+       
     }
 }

@@ -51,7 +51,7 @@ namespace MVC.ViewModels
         [DisplayName("Details")]
         public string Details { get; set; }
 
-        [Required]
+        
         [StringLength(50, ErrorMessage = "This field can't be that long.")]
         [DisplayName("Added by")]
         public string AddedBy { get; set; }

@@ -89,29 +89,17 @@ namespace MVC.Controllers
         public ActionResult Edit(int id)
         {
            
-            
             BrandVM brandVM = new BrandVM();
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
-                service.SetCurrentId(id);
+               // service.SetCurrentId(id);
                 var brandDto = service.GetBrandByID(id);
                 //service.DeleteBrand(id);
-                brandVM = new BrandVM
-                {
-                    Id = brandDto.Id,
-                    BrandName = brandDto.BrandName,
-                    CountryOfOrigin = brandDto.CountryOfOrigin,
-                    FoundedIn = brandDto.FoundedIn,
-                    AddedOn = brandDto.AddedOn,
-                    AddedFrom = brandDto.AddedFrom,
-                    LowestModelPrice = brandDto.LowestModelPrice,
-                };
-
+                brandVM = new BrandVM(brandDto);
+                
             }
 
-            
-            
-            ViewBag.Brands = LoadDataUtil.LoadBrandData();
+            //ViewBag.Brands = LoadDataUtil.LoadBrandData();
             
             return View(brandVM);
         }
@@ -128,11 +116,11 @@ namespace MVC.Controllers
                     
                     using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
                     {
-                        int currentVmId = brandVM.Id;
-                        int idForDto = service.GetCurrentId();
+                        //int currentVmId = brandVM.Id;
+                       // int idForDto = service.GetCurrentId();
                         BrandDTO brandDto2 = new BrandDTO
                         {
-                            Id = brandVM.Id,
+                            
                             BrandName = brandVM.BrandName,
                             CountryOfOrigin = brandVM.CountryOfOrigin,
                             FoundedIn = brandVM.FoundedIn,
@@ -151,12 +139,12 @@ namespace MVC.Controllers
                     return RedirectToAction("Index");
                 }
 
-                ViewBag.Brands = LoadDataUtil.LoadBrandData();
+                //ViewBag.Brands = LoadDataUtil.LoadBrandData();
                 return View();
             }
             catch
             {
-                ViewBag.Brands = LoadDataUtil.LoadBrandData();
+               // ViewBag.Brands = LoadDataUtil.LoadBrandData();
                 return View();
             }
         }

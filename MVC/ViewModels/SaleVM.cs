@@ -41,12 +41,12 @@ namespace MVC.ViewModels
             [DisplayName("Sale Price")]
             public decimal SalePrice { get; set; }
 
-             [DisplayName("Car Id")]
+             [DisplayName("Car")]
              public int CarId { get; set; }
 
-            // public string Car = 
+            public string CarModel { get; set; }
 
-        public CarVM CarVM { get; set; }
+            public CarVM CarVM { get; set; }
 
             public SaleVM() { }
 
@@ -58,7 +58,7 @@ namespace MVC.ViewModels
             SellerName = saleDto.SellerName;
             SaleDate = saleDto.SaleDate;
             SalePrice = saleDto.SalePrice;
-
+            
             CarVM = new CarVM
             {
                 Id = saleDto.CarId,
@@ -71,6 +71,7 @@ namespace MVC.ViewModels
                 Details = saleDto.Car.Details,
                 AddedBy = saleDto.Car.AddedBy
             };
+            CarModel = saleDto.Car.Color + " " + saleDto.Car.Model;
         }
     }
 }

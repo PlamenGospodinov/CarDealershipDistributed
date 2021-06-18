@@ -12,7 +12,7 @@ namespace MVC.ViewModels
     [Bind(Exclude = "Id")]
     public class BrandVM
     {
-        [ScaffoldColumn(false)]
+        //[ScaffoldColumn(false)]
         public int Id { get; set; }
         [Required]
         [StringLength(30, ErrorMessage = "The brand name can't be that long.")]
