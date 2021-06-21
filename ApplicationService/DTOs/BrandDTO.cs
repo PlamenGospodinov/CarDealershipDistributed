@@ -18,5 +18,10 @@ namespace ApplicationService.DTOs
         public string AddedFrom { get; set; }
         public int LowestModelPrice { get; set; }
         public virtual ICollection<Car> Cars { get; set; }
+
+        public bool Validate()
+        {
+            return (!String.IsNullOrEmpty(BrandName) && !String.IsNullOrEmpty(CountryOfOrigin) && !String.IsNullOrEmpty(AddedFrom));
+        }
     }
 }

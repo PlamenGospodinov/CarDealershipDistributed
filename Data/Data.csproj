@@ -84,6 +84,14 @@
     <Compile Include="Migrations\202106171156465_updateSale.designer.cs">
       <DependentUpon>202106171156465_updateSale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106211348551_removeBaseThings.cs" />
+    <Compile Include="Migrations\202106211348551_removeBaseThings.designer.cs">
+      <DependentUpon>202106211348551_removeBaseThings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106211401103_fixedMigg.cs" />
+    <Compile Include="Migrations\202106211401103_fixedMigg.designer.cs">
+      <DependentUpon>202106211401103_fixedMigg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +116,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106171156465_updateSale.resx">
       <DependentUpon>202106171156465_updateSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106211348551_removeBaseThings.resx">
+      <DependentUpon>202106211348551_removeBaseThings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106211401103_fixedMigg.resx">
+      <DependentUpon>202106211401103_fixedMigg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

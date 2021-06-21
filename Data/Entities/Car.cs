@@ -15,15 +15,15 @@ namespace Data.Entities
         public virtual Brand Brand { get; set; }
 
         [Required]
-        [StringLength(40, ErrorMessage = "The model name can't be that long.")]
+        [StringLength(40)]
         public string Model { get; set; }
 
         [Required]
-        [StringLength(50, ErrorMessage = "The condition can't be that long..")]
+        [StringLength(50)]
         public string Condition { get; set; }
 
         [Required]
-        [StringLength(30, ErrorMessage = "The color can't be that long.")]
+        [StringLength(30)]
         public string Color { get; set; }
 
         [Required]
@@ -37,11 +37,11 @@ namespace Data.Entities
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ManifactureDate { get; set; }
 
-        [StringLength(60, ErrorMessage = "The details can't be that long.")]
+        [StringLength(60)]
         public string Details { get; set; }
 
         [Required]
-        [StringLength(50, ErrorMessage = "This field can't be that long.")]
+        [StringLength(50)]
         public string AddedBy { get; set; }
 
         public virtual ICollection<Sale> Sales { get; set; }

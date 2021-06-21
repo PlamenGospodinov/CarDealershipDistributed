@@ -21,5 +21,10 @@ namespace ApplicationService.DTOs
 
         public CarDTO Car { get; set; }
         public int CarId { get; set; }
+
+        public bool Validate()
+        {
+            return (!String.IsNullOrEmpty(ClientFirstName) && !String.IsNullOrEmpty(ClientLastName) && SalePrice > 0);
+        }
     }
 }

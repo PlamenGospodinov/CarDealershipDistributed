@@ -120,7 +120,7 @@ namespace MVC.Controllers
                        // int idForDto = service.GetCurrentId();
                         BrandDTO brandDto2 = new BrandDTO
                         {
-                            
+                            Id = brandVM.Id,
                             BrandName = brandVM.BrandName,
                             CountryOfOrigin = brandVM.CountryOfOrigin,
                             FoundedIn = brandVM.FoundedIn,

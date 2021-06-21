@@ -38,6 +38,9 @@ namespace ApplicationService.DTOs
         
         public int BrandId { get; set; }
 
-       
+        public bool Validate()
+        {
+            return (!String.IsNullOrEmpty(Model) && !String.IsNullOrEmpty(Condition) && !String.IsNullOrEmpty(Color) && Power != 0 && Price != 0 && ManifactureDate != null && !String.IsNullOrEmpty(AddedBy));
+        }
     }
 }

@@ -10,10 +10,10 @@ namespace Data.Context
 {
     public class CarDealershipDbContext : DbContext
     {
-        /*public CarDealershipDbContext()
-            : base("CarDealershipDatabase")
-        {
-        }*/
+        public CarDealershipDbContext()
+        //: base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MovieCatalogDb.mdf;Initial Catalog=MovieCatalogDb123;Integrated Security=True")
+        : base(@"Data Source=.\sqlexpress;Initial Catalog=CarDealershipDb;Integrated Security=SSPI;")
+        { }
 
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Car> Cars { get; set; }

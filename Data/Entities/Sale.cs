@@ -15,14 +15,14 @@ namespace Data.Entities
         public virtual Car Car { get; set; }
 
         [Required]
-        [StringLength(30, ErrorMessage = "The first name can't be that long.")]
+        [StringLength(30)]
         public string ClientFirstName { get; set; }
 
         [Required]
-        [StringLength(30, ErrorMessage = "The last name can't be that long.")]
+        [StringLength(30)]
         public string ClientLastName { get; set; }
 
-        [StringLength(50, ErrorMessage = "The seller name can't be that long.")]
+        [StringLength(50)]
         public string SellerName { get; set; }
 
         [DataType(DataType.Date)]
