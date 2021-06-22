@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Data.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Data.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Car" nillable="true" type="tns:Car" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCar" nillable="true" type="tns:ArrayOfCar" />
+  <xs:complexType name="Car">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Brand" nillable="true" type="tns:Brand" />
+          <xs:element minOccurs="0" name="BrandID" type="xs:int" />
+          <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ManifactureDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Power" type="xs:int" />
+          <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Sales" nillable="true" type="tns:ArrayOfSale" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Car" nillable="true" type="tns:Car" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="Brand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddedFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddedOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BrandName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cars" nillable="true" type="tns:ArrayOfCar" />
+          <xs:element minOccurs="0" name="CountryOfOrigin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FoundedIn" type="xs:short" />
+          <xs:element minOccurs="0" name="LowestModelPrice" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Brand" nillable="true" type="tns:Brand" />
+  <xs:complexType name="ArrayOfSale">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sale" nillable="true" type="tns:Sale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSale" nillable="true" type="tns:ArrayOfSale" />
+  <xs:complexType name="Sale">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Car" nillable="true" type="tns:Car" />
+          <xs:element minOccurs="0" name="CarID" type="xs:int" />
+          <xs:element minOccurs="0" name="ClientFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SaleDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SalePrice" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SellerName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Sale" nillable="true" type="tns:Sale" />
+</xs:schema>

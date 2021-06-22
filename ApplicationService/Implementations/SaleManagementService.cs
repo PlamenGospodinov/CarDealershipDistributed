@@ -10,13 +10,13 @@ namespace ApplicationService.Implementations
     {
         private CarDealershipDbContext ctx = new CarDealershipDbContext();
 
-        public List<SaleDTO> Get()
+        public List<SaleDTO> Get(string filter)
         {
             List<SaleDTO> salesDto = new List<SaleDTO>();
 
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
-                foreach (var item in unitOfWork.SaleRepository.Get())
+                foreach (var item in unitOfWork.SaleRepository.Get(x => x.ClientFirstName.Contains(filter)))
                 {
                     salesDto.Add(new SaleDTO
                     {

@@ -33,8 +33,8 @@ namespace Data.Entities
         public decimal Price { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        
+        
         public DateTime ManifactureDate { get; set; }
 
         [StringLength(60)]

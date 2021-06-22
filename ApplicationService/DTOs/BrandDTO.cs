@@ -14,7 +14,7 @@ namespace ApplicationService.DTOs
 
         public string CountryOfOrigin { get; set; }
         public short FoundedIn { get; set; }
-        public DateTime? AddedOn { get; set; }
+        public DateTime AddedOn { get; set; }
         public string AddedFrom { get; set; }
         public int LowestModelPrice { get; set; }
         public virtual ICollection<Car> Cars { get; set; }

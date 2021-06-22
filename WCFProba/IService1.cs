@@ -24,7 +24,7 @@ namespace WCFProba
 
         // TODO: Add your service operations here
         [OperationContract]
-        List<BrandDTO> GetBrands();
+        List<BrandDTO> GetBrands(string filter);
 
         [OperationContract]
         string PostBrand(BrandDTO brandDto);
@@ -39,7 +39,7 @@ namespace WCFProba
         string DeleteBrand(int id);
 
         [OperationContract]
-        List<CarDTO> GetCars();
+        List<CarDTO> GetCars(string filter);
 
         [OperationContract]
         CarDTO GetCarByID(int id);
@@ -54,7 +54,7 @@ namespace WCFProba
         string DeleteCar(int id);
 
         [OperationContract]
-        List<SaleDTO> GetSales();
+        List<SaleDTO> GetSales(string filter);
 
         [OperationContract]
         SaleDTO GetSaleByID(int id);

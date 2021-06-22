@@ -58,9 +58,9 @@ namespace WCFProba
             return brandService.GetById(id);
         }
 
-        public List<BrandDTO> GetBrands()
+        public List<BrandDTO> GetBrands(string filter)
         {
-            return brandService.Get();
+            return brandService.Get(filter);
         }
 
         public CarDTO GetCarByID(int id)
@@ -68,9 +68,9 @@ namespace WCFProba
             return carService.GetById(id);
         }
 
-        public List<CarDTO> GetCars()
+        public List<CarDTO> GetCars(string filter)
         {
-            return carService.Get();
+            return carService.Get(filter);
         }
 
         public int GetCurrentId()
@@ -101,9 +101,9 @@ namespace WCFProba
             return saleService.GetById(id);
         }
 
-        public List<SaleDTO> GetSales()
+        public List<SaleDTO> GetSales(string filter)
         {
-            return saleService.Get();
+            return saleService.Get(filter);
         }
 
         public string PostBrand(BrandDTO brandDto)

@@ -27,9 +27,9 @@ namespace MVC.ViewModels
             ErrorMessage = "Year must be between 1880 and 2021.")]
         public short FoundedIn { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        
         [DisplayName("Added on(date)")]
-        public DateTime? AddedOn { get; set; }
+        public DateTime AddedOn { get; set; }
         [Required]
         [StringLength(50, ErrorMessage = "This field can't be that long.")]
         [DisplayName("Added from")]

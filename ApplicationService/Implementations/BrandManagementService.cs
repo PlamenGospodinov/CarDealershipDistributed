@@ -14,13 +14,13 @@ namespace ApplicationService.Implementations
     {
         private CarDealershipDbContext ctx = new CarDealershipDbContext();
 
-        public List<BrandDTO> Get()
+        public List<BrandDTO> Get(string filter)
         {
             List<BrandDTO> brandsDto = new List<BrandDTO>();
 
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
-                foreach (var item in unitOfWork.BrandRepository.Get())
+                foreach (var item in unitOfWork.BrandRepository.Get(x => x.BrandName.Contains(filter)))
                 {
                     brandsDto.Add(new BrandDTO
                     {

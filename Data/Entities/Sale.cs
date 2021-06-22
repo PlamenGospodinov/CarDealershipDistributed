@@ -26,8 +26,8 @@ namespace Data.Entities
         public string SellerName { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime? SaleDate { get; set; }
+        
+        public DateTime SaleDate { get; set; }
 
         [Required]
         public decimal SalePrice { get; set; }

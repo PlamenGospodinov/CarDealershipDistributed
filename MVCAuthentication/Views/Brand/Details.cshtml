@@ -1,0 +1,66 @@
+﻿@model MVCAuthentication.ViewModels.BrandVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Of A Brand</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BrandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrandName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryOfOrigin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryOfOrigin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoundedIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoundedIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddedFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LowestModelPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LowestModelPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

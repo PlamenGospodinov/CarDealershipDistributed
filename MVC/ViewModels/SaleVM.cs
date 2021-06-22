@@ -33,7 +33,7 @@ namespace MVC.ViewModels
             [Required]
             [DisplayName("Sale Date")]
             [DataType(DataType.Date)]
-            public DateTime? SaleDate { get; set; }
+            public DateTime SaleDate { get; set; }
 
             [Required]
             [Range(5000, 5000000,
@@ -58,7 +58,7 @@ namespace MVC.ViewModels
             SellerName = saleDto.SellerName;
             SaleDate = saleDto.SaleDate;
             SalePrice = saleDto.SalePrice;
-            
+
             CarVM = new CarVM
             {
                 Id = saleDto.CarId,
@@ -69,9 +69,20 @@ namespace MVC.ViewModels
                 Price = saleDto.Car.Price,
                 ManifactureDate = saleDto.Car.ManifactureDate,
                 Details = saleDto.Car.Details,
-                AddedBy = saleDto.Car.AddedBy
+                AddedBy = saleDto.Car.AddedBy,
+                BrandVM = new BrandVM
+                {
+                    Id = saleDto.Car.BrandId,
+                    BrandName = saleDto.Car.Brand.BrandName,
+                    CountryOfOrigin = saleDto.Car.Brand.CountryOfOrigin,
+                    FoundedIn = saleDto.Car.Brand.FoundedIn,
+                    AddedOn = saleDto.Car.Brand.AddedOn,
+                    AddedFrom = saleDto.Car.Brand.AddedFrom,
+                    LowestModelPrice = saleDto.Car.Brand.LowestModelPrice
+
+                }
             };
-            CarModel = saleDto.Car.Color + " " + saleDto.Car.Model;
+            CarModel = saleDto.Car.Brand.BrandName + " " + saleDto.Car.Model;
         }
     }
 }

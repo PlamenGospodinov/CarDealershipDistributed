@@ -57,9 +57,14 @@ namespace WCFServ
             return brandService.GetById(id);
         }
 
+        public List<BrandDTO> GetBrands(string filter)
+        {
+            return brandService.Get(filter);
+        }
+
         public List<BrandDTO> GetBrands()
         {
-            return brandService.Get();
+            throw new NotImplementedException();
         }
 
         public CarDTO GetCarByID(int id)
@@ -67,9 +72,14 @@ namespace WCFServ
             return carService.GetById(id);
         }
 
+        public List<CarDTO> GetCars(string filter)
+        {
+            return carService.Get(filter);
+        }
+
         public List<CarDTO> GetCars()
         {
-            return carService.Get();
+            throw new NotImplementedException();
         }
 
         public string GetData(int value)
@@ -95,9 +105,14 @@ namespace WCFServ
             return saleService.GetById(id);
         }
 
+        public List<SaleDTO> GetSales(string filter)
+        {
+            return saleService.Get(filter);
+        }
+
         public List<SaleDTO> GetSales()
         {
-            return saleService.Get();
+            throw new NotImplementedException();
         }
 
         public string PostBrand(BrandDTO brandDto)

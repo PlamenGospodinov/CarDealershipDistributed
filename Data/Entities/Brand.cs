@@ -19,8 +19,8 @@ namespace Data.Entities
         public string CountryOfOrigin { get; set; }
         public short FoundedIn { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime? AddedOn { get; set; }
+        
+        public DateTime AddedOn { get; set; }
         [Required]
         [StringLength(50)]
         public string AddedFrom { get; set; }

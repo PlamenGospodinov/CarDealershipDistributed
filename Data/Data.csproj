@@ -92,6 +92,10 @@
     <Compile Include="Migrations\202106211401103_fixedMigg.designer.cs">
       <DependentUpon>202106211401103_fixedMigg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106220850351_addMigFix.cs" />
+    <Compile Include="Migrations\202106220850351_addMigFix.designer.cs">
+      <DependentUpon>202106220850351_addMigFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -122,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106211401103_fixedMigg.resx">
       <DependentUpon>202106211401103_fixedMigg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106220850351_addMigFix.resx">
+      <DependentUpon>202106220850351_addMigFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

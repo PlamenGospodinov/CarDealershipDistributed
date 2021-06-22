@@ -15,7 +15,7 @@ namespace ApplicationService.DTOs
 
         public string SellerName { get; set; }
 
-        public DateTime? SaleDate { get; set; }
+        public DateTime SaleDate { get; set; }
 
         public decimal SalePrice { get; set; }
 

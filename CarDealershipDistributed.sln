@@ -22,6 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService", "WCFService\WC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFProba", "WCFProba\WCFProba.csproj", "{940E3B72-954B-4685-AC20-8C969AC042DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCAuthentication", "MVCAuthentication\MVCAuthentication.csproj", "{828BB26F-7B0C-49BC-A20B-7117C9D2A217}"
+	ProjectSection(ProjectDependencies) = postProject
+		{940E3B72-954B-4685-AC20-8C969AC042DB} = {940E3B72-954B-4685-AC20-8C969AC042DB}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +57,10 @@ Global
 		{940E3B72-954B-4685-AC20-8C969AC042DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{940E3B72-954B-4685-AC20-8C969AC042DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{940E3B72-954B-4685-AC20-8C969AC042DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{828BB26F-7B0C-49BC-A20B-7117C9D2A217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828BB26F-7B0C-49BC-A20B-7117C9D2A217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828BB26F-7B0C-49BC-A20B-7117C9D2A217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828BB26F-7B0C-49BC-A20B-7117C9D2A217}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +71,7 @@ Global
 		{E35556EC-FDFF-4A34-BC3E-F1007DB6FE9F} = {7C68E907-A8D7-498A-86AD-DAEAE0F27D1B}
 		{80CDCB18-BBE2-40EB-8DB0-614D8AA3C72B} = {767E6621-3709-49BD-925F-94CD255AA814}
 		{AFB31E52-935B-414B-B342-D76CC81A4C70} = {7C68E907-A8D7-498A-86AD-DAEAE0F27D1B}
+		{828BB26F-7B0C-49BC-A20B-7117C9D2A217} = {7C68E907-A8D7-498A-86AD-DAEAE0F27D1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AAEF8891-DBEE-495F-94D9-DAEFB6FD5D98}
