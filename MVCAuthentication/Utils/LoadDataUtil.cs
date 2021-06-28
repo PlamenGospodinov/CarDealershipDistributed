@@ -20,7 +20,7 @@ namespace MVC.Utils
         {
             using (MVCAuthentication.ServiceReference1.Service1Client service = new MVCAuthentication.ServiceReference1.Service1Client())
             {
-                return new SelectList(service.GetCars(""), "Id", "BrandName", "CarModel");
+                return new SelectList(service.GetCars(""), "Id","Model");
             }
         }
 

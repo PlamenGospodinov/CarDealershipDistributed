@@ -104,11 +104,13 @@ namespace MVCAuthentication.Controllers
             SaleVM saleVM = new SaleVM();
             using (ServiceReference1.Service1Client service = new ServiceReference1.Service1Client())
             {
+                ViewBag.Cars = new SelectList(service.GetCars(""), "Id", "Model");
                 var saleDto = service.GetSaleByID(id);
                 saleVM = new SaleVM(saleDto);
 
             }
-            ViewBag.Cars = LoadDataUtil.LoadCarData();
+
+            //ViewBag.Cars = LoadDataUtil.LoadCarData();
             return View(saleVM);
 
 
